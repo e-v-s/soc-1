@@ -182,19 +182,16 @@ The objective of CIT is to have the following:
 
 <ul>
 <li>MITRE ATT&CK</li>
-
-
+<br>
 <li><a href="https://oasis-open.github.io/cti-documentation/taxii/intro">TAXII</a>: defines protocols used to exchange threat intel to detect/prevent/mitigate in real-time
 <ul>
 <li>Collection</li>
 <li>Channel</li>
 </ul>
 </li>
-
-
+<br>
 <li><a href="https://oasis-open.github.io/cti-documentation/stix/intro">STIX</a>: language for specification, characterisation and communication of std CIT</li>
-
-
+<br>
 <li>Cyber Kill Chain: helps to identify the stage of the attack
 <ul>
 <li>Recon: OSINT, social media, network scans, emails</li>
@@ -206,7 +203,7 @@ The objective of CIT is to have the following:
 <li>Actions on objectives</li>
 </ul>
 </li>
-
+<br>
 <li>The Diamond Model
 <ul>
 <li>Adversary</li>
@@ -217,4 +214,4 @@ The objective of CIT is to have the following:
 </li>
 </ul>
 
-<h2>Threat Intelligencec Tools</h2>
+<h2>Threat Intelligence Tools</h2>
