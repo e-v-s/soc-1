@@ -1,8 +1,9 @@
 # soc-1
 SOC level 1 THM
 
-<h1>MITRE</h1>
-<h2>Projects</h2>
+<h1>Cyber Defence Frameworks</h1>
+<h2>MITRE</h2>
+<h3>Projects</h3>
 
 - <a href="https://attack.mitre.org/">ATT&CK</a>: <strong>A</strong>dversarial <strong>T</strong>actics, <strong>T</strong>echniques, <strong>&</strong> <strong>C</strong>ommon <stron>K</strong>nowledge
 
@@ -36,7 +37,7 @@ These are a step-by-tep guide on how to mimic the specific threat group. <a href
 <b>Technique</b>: how to achieve the goal
 <b>Procedure</b>: how the technique is executed
 
-<h2>ATT&CK and Threat intelligence</h2>
+<h3>ATT&CK and Threat intelligence</h3>
 
 The goal of threat intelligence is to make the TTPs actionable.
 
@@ -44,16 +45,16 @@ The main idea is to gather information about common threats aimed to a particula
 
 
 
-<h1>Summit</h1>
-<h2>Applying the concepts of the Pyramid of Pain</h2>
+<h2>Summit</h2>
+<h3>Applying the concepts of the Pyramid of Pain</h3>
 
-<h3>Hash values</h3>
+<h4>Hash values</h4>
 <p>
 It's used to identify a malicious artifact. You can upload the file on <a href="https://www.virustotal.com/gui/">virus total</a>, analyze and block it from being executed.<br><br>
 <b>The problem:</b> if the attacker knows you blocked the hash of the malware they can recompile it.
 </p>
 
-<h3>IP Address</h3>
+<h4>IP Address</h4>
 
 <p>
 If the <i>threat actor</i> changes its malware to evade the hash from being blocked, you cannot evade it by analyzing each file that infects your device. It's better to move on and <b>deny</b>, <b>block</b> or <b>drop</b> inbound requests from malicious IP related to the execution of the malware.<br><br>
@@ -62,7 +63,7 @@ The block is made on the firewall level (as it's an application layer request).<
 <b>The problem:</b> The attacker can use <a href="https://en.wikipedia.org/wiki/Fast_flux">Fast Flux</a> to hide its <i>comman and control server</i> (C&C).
 </p>
 
-<h3>Domain names</h3>
+<h4>Domain names</h4>
 
 <p>
 Supposing the attacker changed his IP, you have to deal with this by blocking the domain/sub-domain, because changing the IP address is easy, but changing the DNS is a pain in the ass.<br><br>
@@ -79,7 +80,7 @@ We can see in the sandbox the communications made by the malware:<br>
 Also, attackers use url shorteners to hide malicious url. But you can see to where it redirects by appending <b>+</b> at the and of the tiny.url, bit.ly and goo.gl.
 </p>
 
-<h3>Host artifacts</h3>
+<h4>Host artifacts</h4>
 
 <p>
 These are traces of the malwere on the system to evade the monitoring of the system for example, like:<br>
@@ -95,7 +96,7 @@ These are traces of the malwere on the system to evade the monitoring of the sys
 In this case we search for something related to the malware and create a sigma rule related to the artifact and blocking the malware.
 </p>
 
-<h3>Network Artifacts</h3>
+<h4>Network Artifacts</h4>
 
 <p>
 If we can block the malware by detecting the <i>host artifacts</i>, then the attacker has to change his approach (tactics and tools). Network artifacts can be:<br>
@@ -110,7 +111,7 @@ If we can block the malware by detecting the <i>host artifacts</i>, then the att
 We detect them in <b>Wireshark</b> PCAPs by using <b>network protocol analyzers</b> such as <i>TShark</i> or by exploring <b>IDS logging</b> using <i>Snort</i>. We block them by creating a sigma rule to block outgoing connections related to the malware.
 </p>
 
-<h3>Tools</h3>
+<h4>Tools</h4>
 
 <p>
 At this point the attacker would let it go. But if not, he/she would have to change his/her tool and create maldocs. At this stage we should use <i>antivirus signatures</i>, <i>detection rules</i> and <i>YARA rules</i>.
@@ -214,7 +215,6 @@ The objective of CIT is to have the following:
 <li>Capabilities</li>
 </ul>
 </li>
-
 </ul>
 
-
+<h2>Threat Intelligencec Tools</h2>
