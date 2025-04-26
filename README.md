@@ -3,7 +3,7 @@ SOC level 1 THM
 
 <h1>Cyber Defence Frameworks</h1>
 <ul>
-<li>MITRE</li>
+<h2>MITRE</h2>
 <ul>
 <li>Projects</li>
 </ul>
