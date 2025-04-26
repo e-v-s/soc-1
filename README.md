@@ -5,7 +5,7 @@ SOC level 1 THM
 <ul>
 <h2>MITRE</h2>
 <ul>
-<li>Projects</li>
+<h3>Projects</h3>
 </ul>
 <li>Summit</li>
 </ul>
