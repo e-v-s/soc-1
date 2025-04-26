@@ -215,3 +215,40 @@ The objective of CIT is to have the following:
 </ul>
 
 <h2>Threat Intelligence Tools</h2>
+
+
+<h3><a href="https://urlscan.io/">Urlscan.io</a></h3>
+It scans and analyses websites.
+
+<h3><a href="https://abuse.ch/">Abuse.ch</a></h3>
+Identifies and track malware and botnets using:<br>
+<ul>
+<ul>
+<li><a href="https://bazaar.abuse.ch/">MalwareBazaar:</a> resource to share malware samples</li>
+<li><a href="https://feodotracker.abuse.ch/">FeodoTracker:</a> used to track C2 botnets</li>
+<li><a href="https://sslbl.abuse.ch/">SSL Blacklist:</a> ID and detect malicious SSL connections</li>
+<li><a href="https://urlhaus.abuse.ch/">URLhaus:</a> malicious URLs used for malware distribution</li>
+<li><a href="https://threatfox.abuse.ch/">ThreatFox:</a> IOCs associated with malware</li>
+</ul>
+</ul>
+
+<h3><a href="https://www.phishtool.com/">PhishTool</a></h3>
+<ul>
+<ul>
+<li>Email analytics from metadata</li>
+<li>Heuristic intelligence and OSINT to understand the TTPs used</li>
+<li>Classification and reporting</li>
+</ul>
+<br>
+<b>Defang IP address:</b> https://gchq.github.io/CyberChef/
+</ul>
+
+<h3><a href="https://talosintelligence.com/">Talos Intelligence</a></h3>
+
+
+<h1>YARA</h1>
+
+
+
+
+
