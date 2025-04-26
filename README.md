@@ -10,6 +10,11 @@ SOC level 1 THM
 <h2>Summit</h2>
 </ul>
 
+<details>
+<summary>How do I dropdown?</summary>
+<br>
+This is how you dropdown.
+</details>
 
 
 <h1>Cyber Threat Intelligence</h1>
