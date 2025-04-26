@@ -7,7 +7,7 @@ SOC level 1 THM
 <ul>
 <h3>Projects</h3>
 </ul>
-<li>Summit</li>
+<h3>Summit</h3>
 </ul>
 
 
