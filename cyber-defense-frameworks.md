@@ -1,122 +1,115 @@
 
-<h1>Cyber Defence Frameworks</h1>
-<h2>MITRE</h2>
-<h3>Projects</h3>
+# Cyber Defence Frameworks
+## MITRE
+### Projetos
 
-- <a href="https://attack.mitre.org/">ATT&CK</a>: <strong>A</strong>dversarial <strong>T</strong>actics, <strong>T</strong>echniques, <strong>&</strong> <strong>C</strong>ommon <stron>K</strong>nowledge
+- <a href="https://attack.mitre.org/">ATT&CK</a><br>
+  **A**dversarial<br>
+  **T**actics
+  **T**echniques<br>
+  **&**<br>
+  **C**ommon<br>
+  **K**nowledge<br>
 
-<p>
-It's a documentation of common <i>TTPs</i>.<br>
+  Documentação de *TTPs* comuns.<br>
 <a href="https://mitre-attack.github.io/attack-navigator">ATT&CK Navigator for Carbanak.</a>
-</p>
 
-- CAR: <strong>C</strong>yber <strong>A</strong>nalytics <strong>R</strong>epository Knowledge Base
-
-<p>
-   Provides a set of validated and well-explained analytics.<br>
+- CAR: **C**yber **A**nalytics **R**epository Knowledge Base<br>
+  Disponibiliza sets de análises explicadas e validadas.<br>
    <a href="https://mitre-attack.github.io/attack-navigator/">CAR navigator layer</a>
-</p>
 
-- <a href="https://d3fend.mitre.org/">ENGAGE</a>: It's a framework for planning and discussing adversary engagement operations. <a href="https://engage.mitre.org/starter-kit/">Starter kit</a>
+- <a href="https://d3fend.mitre.org/">ENGAGE</a>: É um framework para planejamento e discussão de operações de engajamento. <a href="https://engage.mitre.org/starter-kit/">Starter kit</a>
 
-- D3FEND: <b>D</b>etection, <b>D</b>enial, and <b>D</b>isruption <b>F</b>ramework <b>E</b>mpowering <b>N</b>etwork <b>D</b>efense
+- D3FEND: **D**etection, **D**enial, and **D**isruption **F**ramework **E**mpowering **N**etwork **D**efense
+  É uma ferramenta de grafo de contramedidas. Disponibiliza definições, "como funciona", considerações e como usar as técnicas.
 
-<p>
-It's a graph of countermeasures. Provides the definition, how it works, considerations and how to use the technique.
-</p>
+- <a href="https://mitre-engenuity.org/">AEP</a>: **A**TT&CK **E**mulation **P**lans
 
-- <a href="https://mitre-engenuity.org/">AEP</a>: <b>A</b>TT&CK <b>E</b>mulation <b>P</b>lans
+  São guias passo-a-passo em como mimetizar grupos de ameaça específicos. <a href="https://github.com/center-for-threat-informed-defense/adversary_emulation_library">Emulation plan lib</a>
 
-<p>
-These are a step-by-tep guide on how to mimic the specific threat group. <a href="https://github.com/center-for-threat-informed-defense/adversary_emulation_library">Emulation plan lib</a>
-</p>
+**Tactics**: goal<br>
+**Technique**: how to achieve the goal<br>
+**Procedure**: how the technique is executed<br>
 
-<b>Tactics</b>: goal
-<b>Technique</b>: how to achieve the goal
-<b>Procedure</b>: how the technique is executed
+### ATT&CK and Threat intelligence
 
-<h3>ATT&CK and Threat intelligence</h3>
+O objetivo do *threat intelligence* é de tornar os TTPs acionáveis.
 
-The goal of threat intelligence is to make the TTPs actionable.
-
-The main idea is to gather information about common threats aimed to a particular case scenario on your organization, so you can plan ahead.
+A ideia principal se planejar com antecedência ao coletar informações sobre ameaças comuns que tem como objetivo uma situação específica na sua organização.
 
 
+## Summit
+### Aplicando os conceitos da Pyramid of Pain
 
-<h2>Summit</h2>
-<h3>Applying the concepts of the Pyramid of Pain</h3>
+#### Valores de hash
 
-<h4>Hash values</h4>
-<p>
 It's used to identify a malicious artifact. You can upload the file on <a href="https://www.virustotal.com/gui/">virus total</a>, analyze and block it from being executed.<br><br>
-<b>The problem:</b> if the attacker knows you blocked the hash of the malware they can recompile it.
-</p>
+**The problem:** if the attacker knows you blocked the hash of the malware they can recompile it.
 
-<h4>IP Address</h4>
+#### IP Address
 
-<p>
-If the <i>threat actor</i> changes its malware to evade the hash from being blocked, you cannot evade it by analyzing each file that infects your device. It's better to move on and <b>deny</b>, <b>block</b> or <b>drop</b> inbound requests from malicious IP related to the execution of the malware.<br><br>
-By analyzing it with the virustotal tool we can see if there are any <b>GET</b> requests being made by the malware and then block this IP.<br><br>
+If the *threat actor* changes its malware to evade the hash from being blocked, you cannot evade it by analyzing each file that infects your device. It's better to move on and **deny**, **block** or **drop** inbound requests from malicious IP related to the execution of the malware.<br><br>
+By analyzing it with the virustotal tool we can see if there are any **GET** requests being made by the malware and then block this IP.<br><br>
 The block is made on the firewall level (as it's an application layer request).<br><br>
-<b>The problem:</b> The attacker can use <a href="https://en.wikipedia.org/wiki/Fast_flux">Fast Flux</a> to hide its <i>comman and control server</i> (C&C).
-</p>
+**The problem:** The attacker can use <a href="https://en.wikipedia.org/wiki/Fast_flux">Fast Flux</a> to hide its *comman and control server* (C&C).
 
-<h4>Domain names</h4>
 
-<p>
+#### Domain names
+
+
 Supposing the attacker changed his IP, you have to deal with this by blocking the domain/sub-domain, because changing the IP address is easy, but changing the DNS is a pain in the ass.<br><br>
-<b>We can create a DNS rule to block the domain/sub-domain.</b><br><br>
+**We can create a DNS rule to block the domain/sub-domain.**<br><br>
 We can see in the sandbox the communications made by the malware:<br>
-<ul>
-<li>HTTP GET requests</li>
-<li>Connections</li>
-<li>DNS requests (they use it to see if there's internet connectivity, if it hasn't then it's useless)</li>
-</ul>
 
-<b>The problem:</b> the attacker can go forward with it, by a new domain and hide the DNS records.<br><br>
-<i>Punycode</i>: changing the name of a domain to look legit.<br><br>
-Also, attackers use url shorteners to hide malicious url. But you can see to where it redirects by appending <b>+</b> at the and of the tiny.url, bit.ly and goo.gl.
-</p>
+- HTTP GET requests
+- Connections
+- DNS requests (they use it to see if there's internet connectivity, if it hasn't then it's useless)
 
-<h4>Host artifacts</h4>
 
-<p>
+**The problem:** the attacker can go forward with it, by a new domain and hide the DNS records.<br><br>
+*Punycode*: changing the name of a domain to look legit.<br><br>
+Also, attackers use url shorteners to hide malicious url. But you can see to where it redirects by appending **+** at the and of the tiny.url, bit.ly and goo.gl.
+
+
+#### Host artifacts
+
+
 These are traces of the malwere on the system to evade the monitoring of the system for example, like:<br>
 
-<ul>
-<li>Registry values</li>
-<li>Process execution</li>
-<li>IOC</li>
-<li>Files dropped</li>
-</ul>
+
+- Registry values
+- Process execution
+- IOC
+- Files dropped
+
 
 
 In this case we search for something related to the malware and create a sigma rule related to the artifact and blocking the malware.
-</p>
-
-<h4>Network Artifacts</h4>
-
-<p>
-If we can block the malware by detecting the <i>host artifacts</i>, then the attacker has to change his approach (tactics and tools). Network artifacts can be:<br>
-
-<ul>
-<li>User-agent strings</li>
-<li>C2 information</li>
-<li>URI patterns followed by HTTP POST resquest</li>
-</ul>
 
 
-We detect them in <b>Wireshark</b> PCAPs by using <b>network protocol analyzers</b> such as <i>TShark</i> or by exploring <b>IDS logging</b> using <i>Snort</i>. We block them by creating a sigma rule to block outgoing connections related to the malware.
-</p>
+#### Network Artifacts
 
-<h4>Tools</h4>
 
-<p>
-At this point the attacker would let it go. But if not, he/she would have to change his/her tool and create maldocs. At this stage we should use <i>antivirus signatures</i>, <i>detection rules</i> and <i>YARA rules</i>.
+If we can block the malware by detecting the *host artifacts*, then the attacker has to change his approach (tactics and tools). Network artifacts can be:<br>
+
+
+- User-agent strings
+- C2 information
+- URI patterns followed by HTTP POST resquest
+
+
+
+We detect them in **Wireshark** PCAPs by using **network protocol analyzers** such as *TShark* or by exploring **IDS logging** using *Snort*. We block them by creating a sigma rule to block outgoing connections related to the malware.
+
+
+#### Tools
+
+
+At this point the attacker would let it go. But if not, he/she would have to change his/her tool and create maldocs. At this stage we should use *antivirus signatures*, *detection rules* and *YARA rules*.
 
 Tools: malwareBazaar, Malshare, SOC prime threat detection marketplace (this one is to create rules for =/= threats that are around).
-</p>
-</ul>
 
 
-<b>addendum</b>: <a href="https://www.beyondtrust.com/resources/glossary/pass-the-hash-pth-attack">pass-the-hash attacks</a>
+
+
+**addendum**: <a href="https://www.beyondtrust.com/resources/glossary/pass-the-hash-pth-attack">pass-the-hash attacks</a>
