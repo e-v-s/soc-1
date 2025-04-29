@@ -129,9 +129,13 @@ It identifies info based on binary and textual patterns contained within a file.
 <ul>
 <li>Create the file.yar: </li>
 We start by adding the condition that the file to be analyzed has to exist first:<br>
-    rule exampleRule {
-          condition: true
-    }
+    rule exampleRule {<br>
+          condition: true<br>
+    }<br>
+To run the rule we use the following command:<br>
+yara file.yar file-to-be-analyzed
+<br><br>
+<li></li>
 </ul>
 </ul>
 
