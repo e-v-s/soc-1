@@ -122,31 +122,37 @@ Identifies and track malware and botnets using:<br>
 
 
 <h1>YARA</h1>
-It identifies info based on binary and textual patterns contained within a file.
+Identifica informações baseandos-e nos binários e padrões textuais contidos no arquivo
 
-<h2>How to create rules?</h2>
+<h2>Como criar regras?</h2>
 <ul>
 <ul>
-<li>Create the file.yar: </li>
-We start by adding the condition that the file to be analyzed has to exist first:<br>
-    rule exampleRule {<br>
-          condition: true<br>
-    }<br>
-To run the rule we use the following command:<br>
-yara file.yar file-to-be-analyzed
+<li>Crie um <code>arquivo.yar</code>: </li>
+Começamos adicionando uma condição de que o arquivo analisado existe:<br>
+<code>
+<p>rule exampleRule {</p>
+<p style="margin-left: 15px;">condition: true</p>
+<p>}</p>
+</code>
+<br>
+Para rodar a regra, usamos o seguinte comando:
+<code>yara arquivo.yar arquivo-a-ser-analisado</code>
 <br><br>
-<li><a href="https://yara.readthedocs.io/en/stable/writingrules.html">Here</a> we can se more rules</li><br>
-<li>Some conditions to know<br>
-<b>meta</b> & <b>desc</b> --> these are to add descriptions, it's like commenting a code;<br><br>
-<b>strings</b> --> we use this to search for a text or hexadecimal in files or programs, like:<br><br>
-rule check_for_helloworld {<br>
-    strings:<br>
-        $hello_world = "Hello World!"<br>
-        $hello_world_lowercase = "hello world"<br>
-        $hello_world_uppercase = "HELLO WORLD"<br>
-    condition:<br>
-        any of them<br>
-}<br><br>
+<li><a href="https://yara.readthedocs.io/en/stable/writingrules.html">Aqui</a> temos mais regras.</li><br>
+<li>Algumas conditions:<br>
+<b>meta</b> & <b>desc</b> --> adicionam comentários à regra;<br><br>
+<b>strings</b> --> usamos para buscar por texto ou um valor em hexadecimal, ex.:<br><br>
+<code>
+<p>rule check_for_helloworld {</p>
+<p style="margin-left: 15px;">strings:</p>
+<p style="margin-left: 30px;">$hello_world = "Hello World!"</p>
+<p style="margin-left: 30px;">$hello_world_lowercase = "hello world"</p>
+<p style="margin-left: 30px;">$hello_world_uppercase = "HELLO WORLD"</p>
+<p style="margin-left: 15px;">condition:</p>
+<p style="margin-left: 30px;">any of them</p>
+<p>}</p>
+</code>
+<br><br>
 We use <b>$</b> to define a variable.<br>
 We use <b>condition</b> $hello_world to make the rule valid or if there's a lot of rules we use <b>any of them</b>.<br>
 We also can use <b>and</b>, <b>not</b>, <b>or</b>, <b>operators</b> lie <=, >= or !=, ex.: if we want to search files containing "hello world"but with a filesize less than 10Kb, we use:<br>
@@ -186,12 +192,13 @@ Usado para criar regras quando as regras que temos não são suficientes.<br><br
 <li>Passos</li>
 <ul>
 <li>Ir pro diretório da ferramenta: tools/yarGen</li>
-<li>python3 yarGen.py --update</li>
-<li>Agora adicionamos a regra da seguinte maneira:<br><br>
-python 3 yarGen.py -m /caminho/do/diretorio/onde/esta/o/<b>arquivo<b> --excludegood -o /caminho/do/diretorio/onde/esta/o/<b>arquivo.yar<b>
+<li><code>python3 yarGen.py --update</code></li>
+<li>Agora adicionamos a regra da seguinte maneira:<br>
+<code>python 3 yarGen.py -m /caminho/do/diretorio/onde/esta/o/<b>arquivo</b> --excludegood -o /caminho/do/diretorio/onde/esta/o/<b>arquivo.yar</b></code>
 </li>
 <li>Agora precisamos mover esta regra para as regras do Loki, para então podermos scanear o arquivo novamente:<br>
-mv caminho/do/diretorio/onde/esta/o/<b>arquivo.yar<b> tools/Loki/signature-n-sei-que/yara</li>
+<code>mv caminho/do/diretorio/onde/esta/o/<b>arquivo.yar<b> tools/Loki/signature-n-sei-que/yara</code>
+</li>
 <li>Agora podemos voltar para o diretório onde está o arquivo que queremos scanear e fazer o scan com o Loki</li>
 </ul>
 </ul>
