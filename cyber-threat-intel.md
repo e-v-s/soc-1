@@ -122,6 +122,18 @@ Identifies and track malware and botnets using:<br>
 
 
 <h1>YARA</h1>
+It identifies info based on binary and textual patterns contained within a file.
+
+<h2>How to create rules?</h2>
+<ul>
+<ul>
+<li>Create the file.yar: </li>
+We start by adding the condition that the file to be analyzed has to exist first:<br>
+    rule exampleRule {
+          condition: true
+    }
+</ul>
+</ul>
 
 
 
