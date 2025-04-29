@@ -3,27 +3,27 @@
 <h2>CIT</h2>
 
 <ul>
-<li>Data: discrete indicators. Ex.: IP, urls, hashes</li>
-<li>Information: combination of data that answers something</li>
-<li>Intelligence: correlation of <i>data</i> and <i>information</i></li>
+<li>Data: são indicadores discretos. Ex.: IP, urls, hashes;</li>
+<li>Information: são os dados que quando combinados dizem algo;</li>
+<li>Intelligence: é a correlação entre <i>data</i> e <i>information</i></li>
 </ul>
 
-The objective of CIT is to have the following:
+O objetivo do CIT é ter as seguintes informações:
 
 <ul>
-<li>Who?</li>
-<li>Motivations</li>
-<li>Capabilities</li>
-<li>Artifacts and IOC should you look for</li>
+<li>Quem?</li>
+<li>Motivações</li>
+<li>Capacidade</li>
+<li>Artefatos e IOC a serem investigados</li>
 </ul>
 
 <h3>Threat Intel Classification</h3>
 
 <ul>
 <li>Strategic</li>
-<li><b>Technical:</b> evidence and artefacts</li>
-<li><b>Tactical:</b> assesses TTPs and addresses vulnerabilities thru real-time investigation</li>
-<li><b>Operational:</b> looks into the motives and critical assets that are the objective of the adversary</li>
+<li><b>Technical:</b> evidência e artefatos</li>
+<li><b>Tactical:</b> avalia os TTPs e aborda vulnerabilidades através de uma investigação em tempo real</li>
+<li><b>Operational:</b> olha para a motivação e os assets críticos que podem ser o objetivo do atacante</li>
 </ul>
 
 <h3>CTI Lifecycle</h3>
@@ -155,6 +155,55 @@ We also can use <b>and</b>, <b>not</b>, <b>or</b>, <b>operators</b> lie <=, >= o
 </li>
 </ul>
 </ul>
+
+        
+<h2>Yara Tools</h2>
+<h3>Pythons'PE Module</h3>
+<h3>LOKI</h3>
+Free opensource IOC scanner.<br>
+<a href="https://github.com/Neo23x0/Loki">Github</a>
+<h3>THOR</h3>
+<a href="https://www.nextron-systems.com/thor-lite/">Here</a>
+<h3>FENRIR</h3>
+<a href="https://github.com/Neo23x0/Fenrir">Here</a>
+
+
+<h2>LOKI</h2>
+Tem que escanear diretamente no endpoint, via CLI.<br><br>
+No diretório, tem que usar --update para adicionar o diretório signature-base, que é o que vamos usar para investigar os arquivos. Também podemos usar python loki.py -h para ver os comandos que podemos usar.
+<ul>
+<li>Passos</li>
+<ul>
+<li>Entrar na pasta onde está o arquivo que vc quer investigar</li>
+<li>Rodar o Loki: python ../../tools/Loki/loki.py -p .</li>
+</ul>
+</ul>
+
+
+<h2>yarGen</h2>
+Usado para criar regras quando as regras que temos não são suficientes.<br><br>
+<ul>
+<li>Passos</li>
+<ul>
+<li>Ir pro diretório da ferramenta: tools/yarGen</li>
+<li>python3 yarGen.py --update</li>
+<li>Agora adicionamos a regra da seguinte maneira:<br><br>
+python 3 yarGen.py -m /caminho/do/diretorio/onde/esta/o/<b>arquivo<b> --excludegood -o /caminho/do/diretorio/onde/esta/o/<b>arquivo.yar<b>
+</li>
+<li>Agora precisamos mover esta regra para as regras do Loki, para então podermos scanear o arquivo novamente:<br>
+mv caminho/do/diretorio/onde/esta/o/<b>arquivo.yar<b> tools/Loki/signature-n-sei-que/yara</li>
+<li>Agora podemos voltar para o diretório onde está o arquivo que queremos scanear e fazer o scan com o Loki</li>
+</ul>
+</ul>
+
+<h2>Valhalla</h2>
+Podemos usar o sha256 gerado no scan do Loki para buscar mais sobre o scan no <a href="https://www.nextron-systems.com/valhalla/">Valhalla</a>
+
+
+<h1>OpenCTI</h1>
+
+
+
         
 
 
