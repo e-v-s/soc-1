@@ -135,7 +135,26 @@ We start by adding the condition that the file to be analyzed has to exist first
 To run the rule we use the following command:<br>
 yara file.yar file-to-be-analyzed
 <br><br>
-<li></li>
+<li><a href="https://yara.readthedocs.io/en/stable/writingrules.html">Here</a> we can se more rules</li><br>
+<li>Some conditions to know<br>
+<b>meta</b> & <b>desc</b> --> these are to add descriptions, it's like commenting a code;<br><br>
+<b>strings</b> --> we use this to search for a text or hexadecimal in files or programs, like:<br><br>
+rule check_for_helloworld {<br>
+    strings:<br>
+        $hello_world = "Hello World!"<br>
+        $hello_world_lowercase = "hello world"<br>
+        $hello_world_uppercase = "HELLO WORLD"<br>
+    condition:<br>
+        any of them<br>
+}<br><br>
+We use <b>$</b> to define a variable.<br>
+We use <b>condition</b> $hello_world to make the rule valid or if there's a lot of rules we use <b>any of them</b>.<br>
+We also can use <b>and</b>, <b>not</b>, <b>or</b>, <b>operators</b> lie <=, >= or !=, ex.: if we want to search files containing "hello world"but with a filesize less than 10Kb, we use:<br>
+    <b>condition:<br> any of them and filesize < 10KB</b><br>
+![yara_rules](https://github.com/user-attachments/assets/4ad396cc-3aa9-4662-8cde-c3dca50def25)
+
+</li>
+
 </ul>
 </ul>
 
