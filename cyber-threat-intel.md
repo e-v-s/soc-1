@@ -151,12 +151,12 @@ We use <b>$</b> to define a variable.<br>
 We use <b>condition</b> $hello_world to make the rule valid or if there's a lot of rules we use <b>any of them</b>.<br>
 We also can use <b>and</b>, <b>not</b>, <b>or</b>, <b>operators</b> lie <=, >= or !=, ex.: if we want to search files containing "hello world"but with a filesize less than 10Kb, we use:<br>
     <b>condition:<br> any of them and filesize < 10KB</b><br>
-![yara_rules](https://github.com/user-attachments/assets/4ad396cc-3aa9-4662-8cde-c3dca50def25)
-
+<img src="https://github.com/user-attachments/assets/64ac0ef2-3307-486f-9c9b-19e190e13322">
 </li>
+</ul>
+</ul>
+        
 
-</ul>
-</ul>
 
 
 
