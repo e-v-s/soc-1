@@ -1,213 +1,187 @@
-<h1>Cyber Threat Intelligence</h1>
+# Cyber Threat Intelligence
 
-<h2>CIT</h2>
+## CIT
 
-<ul>
-<li>Data: são indicadores discretos. Ex.: IP, urls, hashes;</li>
-<li>Information: são os dados que quando combinados dizem algo;</li>
-<li>Intelligence: é a correlação entre <i>data</i> e <i>information</i></li>
-</ul>
+- Data: são indicadores discretos. Ex.: IP, urls, hashes;
+- Information: são os dados que quando combinados dizem algo;
+- Intelligence: é a correlação entre *data* e *information*
 
 O objetivo do CIT é ter as seguintes informações:
 
-<ul>
-<li>Quem?</li>
-<li>Motivações</li>
-<li>Capacidade</li>
-<li>Artefatos e IOC a serem investigados</li>
-</ul>
+- Quem?
+- Motivações
+- Capacidade
+- Artefatos e IOC a serem investigados
 
-<h3>Threat Intel Classification</h3>
+### Threat Intel Classification
 
-<ul>
-<li>Strategic</li>
-<li><b>Technical:</b> evidência e artefatos</li>
-<li><b>Tactical:</b> avalia os TTPs e aborda vulnerabilidades através de uma investigação em tempo real</li>
-<li><b>Operational:</b> olha para a motivação e os assets críticos que podem ser o objetivo do atacante</li>
-</ul>
+Strategic
+Technical: evidência e artefatos
+Tactical: avalia os TTPs e aborda vulnerabilidades através de uma investigação em tempo real
+Operational: olha para a motivação e os assets críticos que podem ser o objetivo do atacante
 
-<h3>CTI Lifecycle</h3>
+### CTI Lifecycle
 
-<ol>
-<li><b>Direction:</b> objective and goals based on:
-<ul>
-<li>Assets and business information that require defending</li>
-<li>Impact</li>
-<li>Srcs of data/intel that can be used to mitigate</li>
-<li>Tools and resources required to defend the assets</li>
-</ul>
+- **Direção:** os objetivos são baseados em:
 
+  - Assets e informações da organização que necessitam serem defendidos;
+  - Impacto;
+  - Fontes dos dados/intel que podem ser usados para mitigar um exploit;
+  - Ferramentas e recursos necessários para defender os assets.
 
-<li><b>Collection:</b> Automate the collection of data to address the objectives</li>
+- **Coleta:** Automatizar a coleta de dados alinhados com os objetivos;
 
-<li><b>Processign:</b> Extraction, sorting, organization, tagging and graphing of the information gathered from logs, malware detection, network traffic, etc.</li>
+- **Processamento:** Extração, classificação, organização, taggeamento e graphing das informações coletadas de logs, detecções de malware, tráfego de rede, etc;
 
+- **Análise:** Insights e decisões a serem tomadas;
 
-<li><b>Analysis:</b> Insights and decisions to be made</li>
+- **Disseminação:** Das informações pelos *stakeholders*;
 
+- **Feedback:** Das implementações dos controles de segurança entre analistas e *stakeholders*.
 
-<li><b>Dissemination:</b> By the stakeholders</li>
+### CTI Standards & Frameworks
 
+- MITRE ATT&CK
 
-<li><b>Feedback:</b> Between analysts and stakeholders about the implementation of security controls</li>
-</ol>
-
-
-<h3>CTI Stds & Frameworks</h3>
-
-<ul>
-<li>MITRE ATT&CK</li>
-<br>
-<li><a href="https://oasis-open.github.io/cti-documentation/taxii/intro">TAXII</a>: defines protocols used to exchange threat intel to detect/prevent/mitigate in real-time
-<ul>
-<li>Collection</li>
-<li>Channel</li>
-</ul>
-</li>
-<br>
-<li><a href="https://oasis-open.github.io/cti-documentation/stix/intro">STIX</a>: language for specification, characterisation and communication of std CIT</li>
-<br>
-<li>Cyber Kill Chain: helps to identify the stage of the attack
-<ul>
-<li>Recon: OSINT, social media, network scans, emails</li>
-<li>Weaponisation: using a malware based on intentions</li>
-<li>Delivery: how the malware is sent</li>
-<li>Exploitation: establish persistance</li>
-<li>Installation: install malware and tools to gain access</li>
-<li>C2: control remotely, lateral movement, elevate privileges</li>
-<li>Actions on objectives</li>
-</ul>
-</li>
-<br>
-<li>The Diamond Model
-<ul>
-<li>Adversary</li>
-<li>Victim</li>
-<li>Infra</li>
-<li>Capabilities</li>
-</ul>
-</li>
-</ul>
-
-<h2>Threat Intelligence Tools</h2>
+  - [TAXII](https://oasis-open.github.io/cti-documentation/taxii/intro">): define os protocolos usados na troca de inteligência de ameaças para detecta/previnir/mitigar em tempo real:
+    - Collection
+    - Channel
+<br><br>
+  - <a href="https://oasis-open.github.io/cti-documentation/stix/intro">STIX</a>: language for specification, characterisation and communication of std CIT
+<br><br>
+- Cyber Kill Chain: ajuda a identificar em qual etapa está o ataque:
+  - Recon: OSINT, mídias sociais, network scans, emails;
+  - Weaponisation: uso de um malware que esteja alinhado com a motivação do ataque;
+  - Delivery: como o malware é enviado;
+  - Exploitation: estabelecer persistência;
+  - Installation: instalação do malware e de ferramentas para ganhar acesso;
+  - C2: controle remoto, movimento lateral, escalamento de privilégios;
+  - Ações e objetivos.
+<br><br>
+- The Diamond Model
+  - Adversary
+  - Victim
+  - Infra
+  - Capabilities
 
 
-<h3><a href="https://urlscan.io/">Urlscan.io</a></h3>
-It scans and analyses websites.
+## Threat Intelligence Tools
 
-<h3><a href="https://abuse.ch/">Abuse.ch</a></h3>
-Identifies and track malware and botnets using:<br>
-<ul>
-<ul>
-<li><a href="https://bazaar.abuse.ch/">MalwareBazaar:</a> resource to share malware samples</li>
-<li><a href="https://feodotracker.abuse.ch/">FeodoTracker:</a> used to track C2 botnets</li>
-<li><a href="https://sslbl.abuse.ch/">SSL Blacklist:</a> ID and detect malicious SSL connections</li>
-<li><a href="https://urlhaus.abuse.ch/">URLhaus:</a> malicious URLs used for malware distribution</li>
-<li><a href="https://threatfox.abuse.ch/">ThreatFox:</a> IOCs associated with malware</li>
-</ul>
-</ul>
+### <a href="https://urlscan.io/">Urlscan.io</a>
+Escaneia e analisa urls.
 
-<h3><a href="https://www.phishtool.com/">PhishTool</a></h3>
-<ul>
-<ul>
-<li>Email analytics from metadata</li>
-<li>Heuristic intelligence and OSINT to understand the TTPs used</li>
-<li>Classification and reporting</li>
-</ul>
-<br>
-<b>Defang IP address:</b> https://gchq.github.io/CyberChef/
-</ul>
+### [Abuse.ch](https://abuse.ch/)
+Identifica e monitora botnets
 
-<h3><a href="https://talosintelligence.com/">Talos Intelligence</a></h3>
+- <a href="https://bazaar.abuse.ch/">MalwareBazaar</a>;
+- <a href="https://feodotracker.abuse.ch/">FeodoTracker:</a> monitorar botnets C2;
+- <a href="https://sslbl.abuse.ch/">SSL Blacklist:</a> ID e detecta conexões SSL maliciosas;
+- <a href="https://urlhaus.abuse.ch/">URLhaus:</a> URLs maliciosas usadas para distribuir malware;
+- <a href="https://threatfox.abuse.ch/">ThreatFox:</a> IOCs associadas à malware.
+
+### [PhishTool](https://www.phishtool.com/)
+
+- Faz uma análise de emails usando os metadados;
+- Usa inteligência heurística e OSINT para entender os TTPs usados;
+- Faz classificação e relatório.
+
+**Defang IP address:** https://gchq.github.io/CyberChef/
+
+### [Talos Intelligence](https://talosintelligence.com/)
 
 
-<h1>YARA</h1>
+# YARA
 Identifica informações baseandos-e nos binários e padrões textuais contidos no arquivo
 
-<h2>Como criar regras?</h2>
-<ul>
-<ul>
-<li>Crie um <code>arquivo.yar</code>: </li>
-Começamos adicionando uma condição de que o arquivo analisado existe:<br>
-<code>
-<p>rule exampleRule {</p>
-<p style="margin-left: 15px;">condition: true</p>
-<p>}</p>
-</code>
-<br>
-Para rodar a regra, usamos o seguinte comando:
-<code>yara arquivo.yar arquivo-a-ser-analisado</code>
-<br><br>
-<li><a href="https://yara.readthedocs.io/en/stable/writingrules.html">Aqui</a> temos mais regras.</li><br>
-<li>Algumas conditions:<br>
-<b>meta</b> & <b>desc</b> --> adicionam comentários à regra;<br><br>
-<b>strings</b> --> usamos para buscar por texto ou um valor em hexadecimal, ex.:<br><br>
-<code>
-<p>rule check_for_helloworld {</p>
-<p style="margin-left: 15px;">strings:</p>
-<p style="margin-left: 30px;">$hello_world = "Hello World!"</p>
-<p style="margin-left: 30px;">$hello_world_lowercase = "hello world"</p>
-<p style="margin-left: 30px;">$hello_world_uppercase = "HELLO WORLD"</p>
-<p style="margin-left: 15px;">condition:</p>
-<p style="margin-left: 30px;">any of them</p>
-<p>}</p>
-</code>
-<br><br>
-We use <b>$</b> to define a variable.<br>
-We use <b>condition</b> $hello_world to make the rule valid or if there's a lot of rules we use <b>any of them</b>.<br>
-We also can use <b>and</b>, <b>not</b>, <b>or</b>, <b>operators</b> lie <=, >= or !=, ex.: if we want to search files containing "hello world"but with a filesize less than 10Kb, we use:<br>
-    <b>condition:<br> any of them and filesize < 10KB</b><br>
-<img src="https://github.com/user-attachments/assets/64ac0ef2-3307-486f-9c9b-19e190e13322">
-</li>
-</ul>
-</ul>
+## Como criar regras?
 
-        
-<h2>Yara Tools</h2>
-<h3>Pythons'PE Module</h3>
-<h3>LOKI</h3>
-Free opensource IOC scanner.<br>
-<a href="https://github.com/Neo23x0/Loki">Github</a>
-<h3>THOR</h3>
-<a href="https://www.nextron-systems.com/thor-lite/">Here</a>
-<h3>FENRIR</h3>
-<a href="https://github.com/Neo23x0/Fenrir">Here</a>
+- Crie um ```arquivo.yar```:
+
+  Começamos adicionando uma condição de que o arquivo analisado existe:
+  ```
+  rule exampleRule {
+    condition: true
+  }
+  ```
+
+  Para rodar a regra, usamos o seguinte comando:
+  
+  ```
+  yara arquivo.yar arquivo-a-ser-analisado
+  ```
+
+- [Aqui](https://yara.readthedocs.io/en/stable/writingrules.html) temos mais regras.
+
+- Algumas conditions:<br>
+  **meta** & **desc** --> adicionam comentários à regra;<br>
+  **strings** --> usamos para buscar por texto ou um valor em hexadecimal, ex.:
+  ```
+  rule check_for_helloworld {
+    strings:
+      $hello_world = "Hello World!"
+      $hello_world_lowercase = "hello world"
+      $hello_world_uppercase = "HELLO WORLD"
+    condition:
+      any of them
+  }
+  ```
+
+  - Usamos ```$``` para definir uma variável.
+  
+  - Podemos usar **and**, **not**, **or**, **operators** como ```<=```, `>=` ou `!=`, ex.: se precisamos buscar por arquivos que contenham `hello world` mas que seja menor que 10Kb, usamos:
+    ```
+    condition: any of them and filesize < 10KB
+    ```
+  <img src="https://github.com/user-attachments/assets/64ac0ef2-3307-486f-9c9b-19e190e13322">
 
 
-<h2>LOKI</h2>
-Tem que escanear diretamente no endpoint, via CLI.<br><br>
+## Yara Tools
+
+### Pythons'PE Module
+
+### LOKI
+É um scanner de IOCs gratuito e *opensource*.
+[Github](https://github.com/Neo23x0/Loki)
+
+### THOR
+[Aqui](https://www.nextron-systems.com/thor-lite/)
+
+### FENRIR
+[Aqui](https://github.com/Neo23x0/Fenrir)
+
+
+## LOKI
+Tem que escanear diretamente no endpoint, via CLI.
 No diretório, tem que usar --update para adicionar o diretório signature-base, que é o que vamos usar para investigar os arquivos. Também podemos usar python loki.py -h para ver os comandos que podemos usar.
-<ul>
-<li>Passos</li>
-<ul>
-<li>Entrar na pasta onde está o arquivo que vc quer investigar</li>
-<li>Rodar o Loki: python ../../tools/Loki/loki.py -p .</li>
-</ul>
-</ul>
+
+- Passos
+  - Entrar na pasta onde está o arquivo que vc quer investigar
+  - Rodar o Loki: python ../../tools/Loki/loki.py -p .
+
+## yarGen
+Usado para criar regras quando as regras que temos não são suficientes.
+
+- Passos
+  - Ir pro diretório da ferramenta: tools/yarGen
+    ```
+    python3 yarGen.py --update
+    ```
+  - Agora adicionamos a regra da seguinte maneira:
+    ```
+    python 3 yarGen.py -m /caminho/do/diretorio/onde/esta/o/arquivo --excludegood -o /caminho/do/diretorio/onde/esta/o/arquivo.yar
+    ```
+  - Agora precisamos mover esta regra para as regras do Loki, para então podermos scanear o arquivo novamente:
+    ```
+    mv caminho/do/diretorio/onde/esta/o/arquivo.yar tools/Loki/signature-n-sei-que/yara
+    ```
+  - Agora podemos voltar para o diretório onde está o arquivo que queremos scanear e fazer o scan com o Loki
 
 
-<h2>yarGen</h2>
-Usado para criar regras quando as regras que temos não são suficientes.<br><br>
-<ul>
-<li>Passos</li>
-<ul>
-<li>Ir pro diretório da ferramenta: tools/yarGen</li>
-<li><code>python3 yarGen.py --update</code></li>
-<li>Agora adicionamos a regra da seguinte maneira:<br>
-<code>python 3 yarGen.py -m /caminho/do/diretorio/onde/esta/o/<b>arquivo</b> --excludegood -o /caminho/do/diretorio/onde/esta/o/<b>arquivo.yar</b></code>
-</li>
-<li>Agora precisamos mover esta regra para as regras do Loki, para então podermos scanear o arquivo novamente:<br>
-<code>mv caminho/do/diretorio/onde/esta/o/<b>arquivo.yar<b> tools/Loki/signature-n-sei-que/yara</code>
-</li>
-<li>Agora podemos voltar para o diretório onde está o arquivo que queremos scanear e fazer o scan com o Loki</li>
-</ul>
-</ul>
-
-<h2>Valhalla</h2>
-Podemos usar o sha256 gerado no scan do Loki para buscar mais sobre o scan no <a href="https://www.nextron-systems.com/valhalla/">Valhalla</a>
+## Valhalla
+Podemos usar o sha256 gerado no scan do Loki para buscar mais sobre o scan no [Valhalla](https://www.nextron-systems.com/valhalla/).
 
 
-<h1>OpenCTI</h1>
+# OpenCTI
 
 
 
