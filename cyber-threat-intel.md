@@ -183,6 +183,31 @@ Podemos usar o sha256 gerado no scan do Loki para buscar mais sobre o scan no [V
 
 # OpenCTI
 
+[OpenCTI](https://github.com/OpenCTI-Platform/opencti) é uma plataforma open-source que serve para fazer a gestão de CTI através de armazenamento, análise, visualização e apresentação de ameaças, malwares e IOCs.
+
+
+## Modelo de dados do OpenCTI
+
+Usa o std STIX2 *structured threat information expression*, um formato usado no compartilhamento de *threat intelligence*.
+
+
+Você pode configurar conectores e *data schemas*.
+
+
+[Download](https://docs.opencti.io/latest/deployment/installation/)
+
+
+# MISP
+
+## Malware Information Sharing Platform
+
+
+
+
+
+
+
+
 
 
         
